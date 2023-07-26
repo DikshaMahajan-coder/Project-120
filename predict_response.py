@@ -27,9 +27,6 @@ classes = pickle.load(open('./classes.pkl','rb'))
 
 def preprocess_user_input(user_input):
 
-    bag=[]
-    bag_of_words = []
-
     # tokenize the user_input
     input_word_token_1 = nltk.word_tokenize(user_input)
 
@@ -38,6 +35,9 @@ def preprocess_user_input(user_input):
 
     # Remove duplicacy and sort the user_input
     input_word_token_2 = sorted(list(set(input_word_token_2)))
+
+    bag=[]
+    bag_of_words = []
    
     # Input data encoding : Create BOW for user_input
     for word in words:
